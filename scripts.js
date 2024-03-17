@@ -1,0 +1,16 @@
+//Function that returns the computer's choice (ex: rock, paper or scissors)
+function getComputerChoice() {
+    //Generates a random integer between 0 and 2
+    let randomNum = Math.floor(Math.random() * 3);
+
+    //Returns a String based on the random number
+    if(randomNum == 0) {
+        return 'Rock';
+    }
+    else if(randomNum == 1) {
+        return 'Paper'
+    }
+    else {
+        return 'Scissors'
+    }
+}

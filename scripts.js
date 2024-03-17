@@ -8,9 +8,36 @@ function getComputerChoice() {
         return 'Rock';
     }
     else if(randomNum == 1) {
-        return 'Paper'
+        return 'Paper';
     }
     else {
-        return 'Scissors'
+        return 'Scissors';
+    }
+}
+
+//Function that declares the winner
+function playRound(playerSelection, computerSelection) {
+
+    //Making both selections lower case for easier comparisons (case insensitive)
+    let playerSelectionToLowerCase = playerSelection.toLowerCase();
+    let computerSelectionToLowerCase = computerSelection.toLowerCase();
+
+    //Player draw Scenario
+    if(playerSelectionToLowerCase == computerSelectionToLowerCase) {
+        return `Draw! You both chose ${playerSelection}`;
+    }
+    //Player loss scenarios
+    else if(playerSelectionToLowerCase == 'rock' && computerSelectionToLowerCase == 'paper') {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    else if(playerSelectionToLowerCase == 'paper' && computerSelectionToLowerCase == 'scissors') {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    else if(playerSelectionToLowerCase == 'scissors' && computerSelectionToLowerCase == 'rock') {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    //Player win scenarios
+    else {
+        return `You Win! ${playerSelection} beats ${computerSelection}`;
     }
 }
